@@ -1,0 +1,17 @@
+<resources>
+    <string name="title_activity_settings">Settings</string>
+
+    <!-- Strings related to Settings -->
+
+    <!-- Example General settings -->
+
+    <string name="pref_location_label">Location</string>
+    <string name="pref_location_key" translatable="false">location</string>
+    <string name="location_default" translatable="false">94043</string>
+
+
+    <string name="pref_header_general">General</string>
+    <string name="pref_units_imperial">imperial</string>
+
+
+</resources>
