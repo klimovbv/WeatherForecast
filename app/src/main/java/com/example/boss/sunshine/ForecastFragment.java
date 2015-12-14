@@ -1,8 +1,5 @@
 package com.example.boss.sunshine;
 
-/**
- * Created by Boss on 08.09.15.
- */
 
 import android.content.Intent;
 import android.support.v4.app.LoaderManager;
@@ -109,6 +106,11 @@ public class ForecastFragment extends Fragment implements LoaderManager.LoaderCa
         getLoaderManager().initLoader(FORECAST_LOADER, null, this);
         super.onActivityCreated(savedInstanceState);
     }
+
+    public void onUnitsChange() {
+        getLoaderManager().restartLoader(FORECAST_LOADER, null, this);
+    }
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,

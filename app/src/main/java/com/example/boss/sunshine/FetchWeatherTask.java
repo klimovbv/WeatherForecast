@@ -18,19 +18,14 @@ package com.example.boss.sunshine;
 import android.content.ContentUris;
 import android.content.ContentValues;
 import android.content.Context;
-import android.content.SharedPreferences;
 import android.database.Cursor;
-import android.database.DatabaseUtils;
 import android.net.Uri;
 import android.os.AsyncTask;
-import android.preference.PreferenceManager;
 import android.text.format.Time;
 import android.util.Log;
-import android.widget.ArrayAdapter;
 
 import com.example.boss.sunshine.data.WeatherContract;
 import com.example.boss.sunshine.data.WeatherContract.WeatherEntry;
-
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -42,8 +37,6 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
-import java.text.SimpleDateFormat;
-import java.util.Date;
 import java.util.Vector;
 
 public class FetchWeatherTask extends AsyncTask<String, Void, Void> {
@@ -376,12 +369,14 @@ public class FetchWeatherTask extends AsyncTask<String, Void, Void> {
             final String FORMAT_PARAM = "mode";
             final String UNITS_PARAM = "units";
             final String DAYS_PARAM = "cnt";
+            final String APP_ID = "appid";
 
             Uri builtUri = Uri.parse(FORECAST_BASE_URL).buildUpon()
                     .appendQueryParameter(QUERY_PARAM, params[0])
                     .appendQueryParameter(FORMAT_PARAM, format)
                     .appendQueryParameter(UNITS_PARAM, units)
                     .appendQueryParameter(DAYS_PARAM, Integer.toString(numDays))
+                    .appendQueryParameter(APP_ID, "2568463ace3e2bf218833d6b2a407b39")
                     .build();
 
             URL url = new URL(builtUri.toString());

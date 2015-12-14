@@ -250,6 +250,7 @@ public class WeatherProvider extends ContentProvider {
                     returnUri = WeatherContract.LocationEntry.buildLocationUri(_id);
                 else
                     throw new SQLException("Faild to insert roe into " + uri);
+                break;
             }
 
             default:
