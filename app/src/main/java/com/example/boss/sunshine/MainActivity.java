@@ -8,6 +8,8 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.example.boss.sunshine.sync.SunshineSyncAdapter;
+
 
 public class MainActivity extends FragmentActivity {
 
@@ -27,6 +29,8 @@ public class MainActivity extends FragmentActivity {
                     .add(R.id.container, new ForecastFragment(), FORECASTFRAGMENT_TAG)
                     .commit();
         }
+
+        SunshineSyncAdapter.initializeSyncAdapter(this);
     }
 
     @Override
@@ -93,4 +97,6 @@ public class MainActivity extends FragmentActivity {
         }
 
     }
+
+
 }

@@ -2,13 +2,13 @@ package com.example.boss.sunshine;
 
 
 import android.content.Intent;
-import android.support.v4.app.LoaderManager;
-import android.support.v4.content.CursorLoader;
-import android.support.v4.content.Loader;
 import android.database.Cursor;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.LoaderManager;
+import android.support.v4.content.CursorLoader;
+import android.support.v4.content.Loader;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -19,6 +19,7 @@ import android.widget.AdapterView;
 import android.widget.ListView;
 
 import com.example.boss.sunshine.data.WeatherContract;
+import com.example.boss.sunshine.sync.SunshineSyncAdapter;
 
 
 /**
@@ -89,11 +90,17 @@ public class ForecastFragment extends Fragment implements LoaderManager.LoaderCa
 
     public void updateWeather() {
 
-        FetchWeatherTask weatherTask = new FetchWeatherTask(getActivity());
+        /*Intent alarmIntent = new Intent(getActivity(), SunshineService.AlarmReceiver.class);
+        alarmIntent.putExtra(SunshineService.LOCATION_EXTRA, Utility.getPreferredLocation(getActivity()));
 
-        String location = Utility.getPreferredLocation(getActivity());
-        weatherTask.execute(location);
+        PendingIntent pi = PendingIntent.getBroadcast(getActivity(), 0, alarmIntent, PendingIntent.FLAG_ONE_SHOT);
 
+        AlarmManager am = (AlarmManager)getActivity().getSystemService(Context.ALARM_SERVICE);
+
+        am.set(AlarmManager.RTC_WAKEUP, System.currentTimeMillis() + 5000, pi);*/
+
+
+        SunshineSyncAdapter.syncImmediately(getActivity());
     }
 
     void onLocationChanged(){

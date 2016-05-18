@@ -16,7 +16,6 @@
             android:id="@+id/detail_day_textview"
             android:layout_height="wrap_content"
             android:layout_width="wrap_content"
-            android:textColor="@color/black"
             android:textSize="24sp" />
 
         <TextView
@@ -24,7 +23,6 @@
             android:id="@+id/detail_date_textview"
             android:layout_height="wrap_content"
             android:layout_width="wrap_content"
-            android:textColor="@color/grey_700"
             android:textSize="16sp" />
 
         <!-- Main content: high, low, art, weather state -->
@@ -53,7 +51,6 @@
                     android:layout_gravity="center_horizontal"
                     android:layout_height="wrap_content"
                     android:layout_width="wrap_content"
-                    android:textColor="@color/grey_700"
                     android:textSize="48sp" />
             </LinearLayout>
 
@@ -73,8 +70,7 @@
                     android:id="@+id/detail_forecast_textview"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textAppearance="?android:textAppearanceLarge"
-                    android:textColor="@color/grey_700" />
+                    android:textAppearance="?android:textAppearanceLarge"/>
             </LinearLayout>
         </LinearLayout>
 

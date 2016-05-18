@@ -147,7 +147,7 @@ public class DetailActivity extends ActionBarActivity {
 
             mForecast = String.format("%s - %s - %s/%s", dateString, weatherDescription, high, low);
 
-            TextView detailTextView = (TextView)getView().findViewById(R.id.detail_text);
+            TextView detailTextView = (TextView)getView().findViewById(R.id.detail_day_textview);
             detailTextView.setText(mForecast);
 
             // If onCreateOptionsMenu has already happened, we need to update the share intent now.
