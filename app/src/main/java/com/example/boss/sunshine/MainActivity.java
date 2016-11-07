@@ -98,5 +98,10 @@ public class MainActivity extends FragmentActivity {
 
     }
 
+    public void newVoidForPull() {
+        int a = 10;
+        a++;
+    }
+
 
 }
