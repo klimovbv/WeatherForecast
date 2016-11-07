@@ -98,9 +98,9 @@ public class MainActivity extends FragmentActivity {
 
     }
 
-    public void newVoidForPull() {
+    public void newVoidForPull2() {
         int a = 10;
-        a++;
+        b++;
     }
 
 
