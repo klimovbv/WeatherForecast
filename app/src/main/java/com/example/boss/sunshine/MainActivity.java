@@ -103,5 +103,9 @@ public class MainActivity extends FragmentActivity {
         b++;
     }
 
+    public void newVoidForPull3() {
+        int a = 10;
+    }
+
 
 }
